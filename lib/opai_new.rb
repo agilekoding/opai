@@ -50,6 +50,6 @@ generate_these.each{ |g| generate(*g) }
 # Application configuration is specified over here
 environment <<TEXT
 config.generators do |g|
-      #{generators.map{ |k,v| "g.#{k} #{v}"}.join("\n")}
+      #{generators.map{ |k,v| "g.#{k} #{v}"}.join("\n      ")}
     end
 TEXT
