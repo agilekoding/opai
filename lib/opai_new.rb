@@ -14,6 +14,7 @@ generators = {
 }
 
 # Base setup
+gem('opai', git: 'git@github.com:e-serge/opai.git')
 gem('backbone-on-rails', git: 'git@github.com:e-serge/backbone-on-rails', branch: 'opai')
 gem('handlebars_assets')
 gem('inherited_resources')
@@ -41,12 +42,14 @@ end
 # Conditional setup, based on optional setup
 gem('devise-mongo_mapper') if options[:mongo_mapper] and options[:devise]
 
+run('bundle')
+
 # Registered generators get executed here
 generate_these.each{ |g| generate(*g) }
 
 # Application configuration is specified over here
 environment <<TEXT
 config.generators do |g|
-  #{generators.map{ |k,v| "g.#{k} #{v}"}}
-end
+      #{generators.map{ |k,v| "g.#{k} #{v}"}.join("\n")}
+    end
 TEXT
