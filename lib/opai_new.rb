@@ -39,6 +39,9 @@ if yes?('Install Devise?')
   options[:devise] = true
 end
 
+# This line adds a last item to the generator queue, it creates the Welcome controller along with it's index action and it's route. Additionally, an index view is created for the index action.
+generate_these << 'controller Welcome index'
+
 # Conditional setup, based on optional setup
 gem('devise-mongo_mapper') if options[:mongo_mapper] and options[:devise]
 
