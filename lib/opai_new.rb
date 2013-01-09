@@ -17,7 +17,7 @@ generators = {
 gem('opai', git: 'git@github.com:e-serge/opai.git')
 gem('backbone-on-rails', git: 'git@github.com:e-serge/backbone-on-rails', branch: 'opai')
 gem('handlebars_assets')
-gem('hamlbars')
+gem('haml_assets')
 gem('inherited_resources')
 gem_group :development, :test do
   gem('rspec-rails')
