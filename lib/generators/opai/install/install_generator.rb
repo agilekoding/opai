@@ -1,16 +1,11 @@
 module Opai
   module Generators
-    class InstallGenerator < Rails::Generators::NamedBase
+    class InstallGenerator < Rails::Generators::Base
       source_root File.expand_path('../templates', __FILE__)
 
       desc "Installs the OPAI structure application."
 
-      def mongo_mapper_configuration
-        generate "mongo_mapper:config"
-      end
-
-      def backbone_on_rails_install
-        generate "backbone:install"
+      def opai
       end
 
       private

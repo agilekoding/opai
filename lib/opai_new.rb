@@ -19,6 +19,7 @@ gem('backbone-on-rails', git: 'git@github.com:e-serge/backbone-on-rails', branch
 gem('handlebars_assets')
 gem('haml_assets')
 gem('inherited_resources')
+gem('bootstrap-sass', '~> 2.2.2.0')
 gem_group :development, :test do
   gem('rspec-rails')
 end
